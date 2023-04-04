@@ -13,15 +13,20 @@ class MailService {
             }
         })
     }
-    async sendActivationMail(to, link) {
+    async sendActivationMail(to, link, body) {
+        console.log(body)
         await this.transporter.sendMail({
             from: process.env.SMTP_USER,
             to,
-            subject: "Activating account " + process.env.API_URL,
+            subject: "Новая заявка с сайта автошколаправа.рф",
             text: '',
             html: `<div>
-                <h1>Click to link:</h1>
-                <a href="${link}">click</a>
+                <b>Имя клиента: </b><p>${body.name}</p><br>
+                <b>Фамилия клиента: </b><p>${body.lastname}</p><br>
+                <b>Почта клиента: </b><p>${body.email}</p><br>
+                <b>Дата записи: </b><p>${body.dataCurrent}</p><br>
+                <b>Телефон клиента: </b><p>${body.phoneClient}</p><br>
+                <b>Форма обучения клиента: </b><p>${body.formsLearnClient}</p><br>
             </div>`
         })
     }
