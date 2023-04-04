@@ -1,9 +1,9 @@
 {
   "name": "sendmail",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
-    "start": "node app.js"
+    "build": "node index.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
