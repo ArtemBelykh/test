@@ -16,7 +16,7 @@ app.use(cors({
 }));
 
 app.options('*', cors()) // include before other routes
-// app.use(cors({ credentials: true, origin: true }))
+app.use(cors({ credentials: true, origin: true }))
 // app.use(cors()) // Use this after the variable declaration  {credentials: true, origin: 'http://localhost:3000'}
 app.use('/api', router)
 
