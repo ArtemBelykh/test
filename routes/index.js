@@ -5,7 +5,7 @@ const mailService = require('../service/mail.service')
 
 router.post('/send', async function(req, res, next) {
   const {body} = req
-  res.json(await mailService.sendActivationMail("stellgame.pro@gmail.com", `/`, body))
+  res.json(await mailService.sendActivationMail("pravo_na_prava44@mail.ru", `/`, body))
 });
 
 module.exports = router;
